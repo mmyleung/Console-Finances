@@ -87,9 +87,25 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+//Print Financial Analysis onto log
 console.log("Financial Analysis");
 console.log("------------------");
 
+//Variable that stores the number of months
 var totalMonths = finances.length;
 
+//Print number of months onto log
 console.log(`Total Months: ${totalMonths}`);
+
+//Calculate net amount of profit/losses over entire period
+
+//Variable that stores total profit/losses
+var totalProfitLoss = 0;
+
+//For loop which loops through all the arrays in finance object
+
+for (let i = 0; i < finances.length; i++) {
+    totalProfitLoss = totalProfitLoss + finances[i][1];
+}
+
+console.log(`Total: ${totalProfitLoss}`);

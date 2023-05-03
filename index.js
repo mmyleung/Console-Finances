@@ -128,3 +128,23 @@ var averageChange = (totalChange/totalMonths).toFixed(2);
 
 //Prints average change
 console.log(`Average Change: $${averageChange}`);
+
+//Calculate the greatest increase in profits (date and amount) over the entire period
+
+//Variable that stores greatest increase in profits
+var greatestIncrease = 0;
+
+//Variable that stores monthly changes in profits
+var monthlyChange = 0;
+
+//For loop that loops through all arrays in finanace object and gets replaced if greater change is detected
+
+for (let k = 0; k < finances.length - 1; k++) {
+    monthlyChange = finances[k+1][1] - finances[k][1];
+    console.log(monthlyChange);
+
+    if (monthlyChange >= greatestIncrease) {
+        greatestIncrease = monthlyChange;
+    }
+
+}

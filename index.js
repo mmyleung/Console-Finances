@@ -134,11 +134,17 @@ console.log(`Average Change: $${averageChange}`);
 //Variable that stores greatest increase in profits
 var greatestIncrease = 0;
 
+//Variable that stores greatest decrease in profits
+var greatestDecrease = 0;
+
 //Variable that stores monthly changes in profits
 var monthlyChange = 0;
 
-//Variable that stores the loop number
+//Variable that stores the loop number in increase
 var loopNumberIncrease = 0;
+
+//Variable that stores the loop number in decrease
+var loopNumberDecrease = 0;
 
 //For loop that loops through all arrays in finanace object and gets replaced if greater change is detected
 
@@ -148,11 +154,17 @@ for (let k = 0; k < finances.length - 1; k++) {
     if (monthlyChange > greatestIncrease) {
         greatestIncrease = monthlyChange;
         loopNumberIncrease = k+1;
+    } else if (monthlyChange < greatestDecrease) {
+        greatestDecrease = monthlyChange;
+        loopNumberDecrease = k+1;
     }
 }
 
 //Variable that stores date of greatest increase in profits
 var monthIncrease = finances[loopNumberIncrease][0];
-console.log(monthIncrease);
+
+//Variable that stores date of greatest decrease in profits
+var monthDecrease = finances[loopNumberDecrease][0];
 
 console.log(`Greatest Increase in Profits: ${monthIncrease} ($${greatestIncrease})`);
+console.log(`Greatest Decrease in Profits: ${monthDecrease} ($${greatestDecrease})`);

@@ -108,4 +108,23 @@ for (let i = 0; i < finances.length; i++) {
     totalProfitLoss = totalProfitLoss + finances[i][1];
 }
 
-console.log(`Total: ${totalProfitLoss}`);
+//Prints total
+console.log(`Total: $${totalProfitLoss}`);
+
+//The average of the changes in Profit/Losses over the entire period
+
+//Calculate total change over entire period
+
+//Variable that stores total change
+var totalChange = 0;
+
+//For loop which loops through all the arrays in finance object and adds the changes together
+for (let j = 0; j < finances.length - 1; j++) {
+    totalChange = totalChange + (finances[j+1][1]-finances[j][1]);
+}
+
+//Variable that stores average change
+var averageChange = (totalChange/totalMonths).toFixed(2);
+
+//Prints average change
+console.log(`Average Change: $${averageChange}`);

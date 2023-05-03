@@ -137,14 +137,22 @@ var greatestIncrease = 0;
 //Variable that stores monthly changes in profits
 var monthlyChange = 0;
 
+//Variable that stores the loop number
+var loopNumberIncrease = 0;
+
 //For loop that loops through all arrays in finanace object and gets replaced if greater change is detected
 
 for (let k = 0; k < finances.length - 1; k++) {
     monthlyChange = finances[k+1][1] - finances[k][1];
-    console.log(monthlyChange);
 
-    if (monthlyChange >= greatestIncrease) {
+    if (monthlyChange > greatestIncrease) {
         greatestIncrease = monthlyChange;
+        loopNumberIncrease = k+1;
     }
-
 }
+
+//Variable that stores date of greatest increase in profits
+var monthIncrease = finances[loopNumberIncrease][0];
+console.log(monthIncrease);
+
+console.log(`Greatest Increase in Profits: ${monthIncrease} ($${greatestIncrease})`);
